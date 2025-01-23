@@ -14,10 +14,20 @@
         <h1>Welcome to AIMS Enrollment</h1>
         <p>Join us today and unlock your potential!</p>
       </header>
-      <form id="enrollmentForm">
+      <form action="https://smartforms.dev/submit/6791b9f65b45507342a0befb" method="POST" id="enrollmentForm">
         <div class="form-group">
           <label for="name">Student's Name</label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+        </div>
+
+        <div class="form-group">
+          <label for="tel">Contact Number</label>
+          <input type="text" id="tel" name="tel" placeholder="Enter your contact number" required>
         </div>
 
         <div class="form-group">
@@ -25,45 +35,35 @@
           <input type="date" id="dob" name="dob" required>
         </div>
 
-<!--         <div class="form-group">
-          <label for="studentImage">Upload Student's Photo</label>
-          <input type="file" id="studentImage" name="studentImage" accept="image/*" required>
-        </div> -->
-
         <div class="form-group">
           <label for="fatherName">Father's Name</label>
           <input type="text" id="fatherName" name="fatherName" placeholder="Enter your father's name" required>
         </div>
 
         <div class="form-group">
-          <label for="Schoolname">School</label>
-          <input type="text" id="Schoolname" name="Schoolname" placeholder="Enter your School name" required>
+          <label for="schoolName">School Name</label>
+          <input type="text" id="schoolName" name="schoolName" placeholder="Enter your school name" required>
         </div>
 
         <div class="form-group">
-          <label for="Subject">Preferred Subject's</label>
-          <input type="text" id="SubjectName" name="SubjectName" placeholder="Enter your Subject's" required>
-        </div>
-
-        <div class="form-group">
-          <label for="location">Preferred Batch</label>
-          <select id="location" name="Preferred Batch" required>
-            <option value="">Select your Batch</option>
+          <label for="preferredBatch">Preferred Batch</label>
+          <select id="preferredBatch" name="preferredBatch" required>
+            <option value="">Select your batch</option>
             <option value="Hindmotor">Hindmotor</option>
             <option value="Uttarpara">Uttarpara</option>
           </select>
         </div>
 
         <div class="form-group">
-          <label for="School Board">School Board</label>
-          <select id="School Board" name="School Board" required>
-            <option value="">Select your Board</option>
+          <label for="schoolBoard">School Board</label>
+          <select id="schoolBoard" name="schoolBoard" required>
+            <option value="">Select your board</option>
             <option value="ICSE">ICSE</option>
             <option value="CBSE">CBSE</option>
             <option value="ISC">ISC</option>
             <option value="WBBSE">WBBSE</option>
             <option value="WBCHSE">WBCHSE</option>
-            <option value="OTHERS">OTHER'S</option>
+            <option value="OTHERS">Other's</option>
           </select>
         </div>
 
@@ -81,26 +81,12 @@
             <option value="Undergraduate">Undergraduate</option>
           </select>
         </div>
-        
+
         <button type="submit">Submit</button>
       </form>
     </div>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-  <script>
+<script src="js/script.js"></script>
 
-// <!-- email js  -->
-     <!-- email js  -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("nxx1efk_lLYl0Hhp1");
-        })();
-    </script>
-    
-
-
-  <script src="js/regix.js"></script>
 </body>
 </html>
