@@ -14,7 +14,10 @@
         <h1>Welcome to AIMS Enrollment</h1>
         <p>Join us today and unlock your potential!</p>
       </header>
-      <form action="https://formsubmit.co/el/tehufu" method="POST">
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- Replace with your Access Key -->
+        <input type="hidden" name="access_key" value="b63048ef-7691-4f26-89c5-e899ce696f0c">
+
         <div class="form-group">
           <label for="name">Student's Name</label>
           <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -82,11 +85,16 @@
           </select>
         </div>
 
+        <!-- Honeypot Spam Protection -->
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+        <!-- Custom Confirmation / Success Page -->
+        <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
         <button type="submit">Submit</button>
       </form>
     </div>
   </section>
-<script src="js/regix.js"></script>
-
+  <script src="js/regix.js"></script>
 </body>
 </html>
