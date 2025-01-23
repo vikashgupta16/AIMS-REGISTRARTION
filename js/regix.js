@@ -6,8 +6,8 @@ document.getElementById("enrollmentForm").addEventListener("submit", function (e
   const formData = new FormData(this);
 
   // Proxy URL
-  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-  const targetUrl = this.action;
+  const proxyUrl = 'https://api.allorigins.win/get?url=';
+  const targetUrl = encodeURIComponent(this.action);
 
   // Submit form data using Fetch API with proxy
   fetch(proxyUrl + targetUrl, {
