@@ -5,14 +5,13 @@ document.getElementById("enrollmentForm").addEventListener("submit", function (e
   // Collect form data
   const formData = new FormData(this);
 
-  // Proxy URL
-  const proxyUrl = 'https://api.allorigins.win/get?url=';
-  const targetUrl = encodeURIComponent(this.action);
-
-  // Submit form data using Fetch API with proxy
-  fetch(proxyUrl + targetUrl, {
-    method: this.method,
+  // Submit form data using Fetch API
+  fetch("https://formsubmit.co/el/tehufu", {
+    method: "POST",
     body: formData,
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded'
+    }
   })
     .then((response) => {
       if (response.ok) {
