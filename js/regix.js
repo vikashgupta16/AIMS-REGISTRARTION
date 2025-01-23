@@ -5,8 +5,12 @@ document.getElementById("enrollmentForm").addEventListener("submit", function (e
   // Collect form data
   const formData = new FormData(this);
 
-  // Submit form data using Fetch API
-  fetch(this.action, {
+  // Proxy URL
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+  const targetUrl = this.action;
+
+  // Submit form data using Fetch API with proxy
+  fetch(proxyUrl + targetUrl, {
     method: this.method,
     body: formData,
   })
