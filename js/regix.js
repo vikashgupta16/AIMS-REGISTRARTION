@@ -1,58 +1,24 @@
-// Form Validation and Email Sending
-function validateEnrollmentForm() {
-    let name = document.getElementById("name");
-    let dob = document.getElementById("dob");
-    let fatherName = document.getElementById("fatherName");
-    let schoolName = document.getElementById("Schoolname");
-    let subjectName = document.getElementById("SubjectName");
-    let location = document.getElementById("location");
-    let classSelect = document.getElementById("class");
-    let sendBtn = document.querySelector("button[type='submit']");
+document.getElementById("enrollmentForm").addEventListener("submit", function (e) {
+  // Prevent default form submission
+  e.preventDefault();
 
-    sendBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        if (
-            name.value === "" || 
-            dob.value === "" || 
-            fatherName.value === "" || 
-            schoolName.value === "" || 
-            subjectName.value === "" || 
-            location.value === "" || 
-            classSelect.value === ""
-        ) {
-            showErrorAlert();
-        } else {
-            sendMail(name.value, fatherName.value, schoolName.value, subjectName.value, location.value, classSelect.value);
-            showSuccessAlert();
-        }
+  // Collect form data
+  const formData = new FormData(this);
+
+  // Submit form data using Fetch API
+  fetch(this.action, {
+    method: this.method,
+    body: formData,
+  })
+    .then((response) => {
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        this.reset(); // Reset the form
+      } else {
+        alert("There was an error submitting the form. Please try again.");
+      }
+    })
+    .catch(() => {
+      alert("Network error. Please check your connection and try again.");
     });
-}
-
-function sendMail(name, fatherName, schoolName, subjectName, location, classSelect) {
-    emailjs.send("service_2zls3oq", "template_2sdk2rf", {
-        name: name,
-        father_name: fatherName,
-        school_name: schoolName,
-        subject_name: subjectName,
-        location: location,
-        class: classSelect
-    });
-}
-
-function showErrorAlert() {
-    swal({
-        title: "Incomplete Form",
-        text: "Please fill out all fields before submitting.",
-        icon: "error",
-    });
-}
-
-function showSuccessAlert() {
-    swal({
-        title: "Form Submitted Successfully",
-        text: "Thank you for enrolling! We'll get back to you shortly.",
-        icon: "success",
-    });
-}
-
-validateEnrollmentForm();
+});
